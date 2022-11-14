@@ -1,5 +1,6 @@
 package org.csd214.entities;
 
+import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 
@@ -8,7 +9,7 @@ import javax.persistence.Entity;
  */
 
 @Entity
-public class Car extends Vehicle {
+public class Car extends Vehicle implements Serializable {
 
     @Basic
     private int number_of_doors;
@@ -24,6 +25,14 @@ public class Car extends Vehicle {
     @Override
     public String toString() {
         return "Car{" + " make=" + getMake() + ", model=" + getModel() + ", year=" + getYear() + ", vin=" + getVin() + ", number_of_doors=" + number_of_doors + '}';
+    }
+
+    public Car() {
+    }
+
+    public Car(int number_of_doors, String make, String model, int year, String vin) {
+        super(make, model, year, vin);
+        this.number_of_doors = number_of_doors;
     }
 
 }

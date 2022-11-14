@@ -1,5 +1,6 @@
 package org.csd214.entities;
 
+import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,7 +15,7 @@ import javax.persistence.InheritanceType;
 
 //@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @Entity
-public class Vehicle {
+public class Vehicle implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -41,6 +42,13 @@ public class Vehicle {
 
     public String getMake() {
         return make;
+    }
+
+    public Vehicle(String make, String model, int year, String vin) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        this.vin = vin;
     }
 
     public void setMake(String make) {
