@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<entity-mappings ptype="MONOLITH" ppkg="org.csd214" epkg="entities" v="5.4.3" rws="_166844812337417" Pws="_166844812337417" cws="_166844812337417" persistenceUnitName="default" pp="E" sm="false" xs="false" id="_166844812337316" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <entity compositePrimaryKeyClass="VehiclePK" abs="false" class="Vehicle" v="true" jbn="false" xre="false" m="false" rootElement="_166844812337316" id="_166844812746518">
+        <ath>fcarella</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="make" id="_166844830061233">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="model" id="_166844830108634">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="int" v="true" xvt="" name="year" id="_166844830157035">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="vin" id="_166844833432236">
+                <xwm/>
+                <xm/>
+            </basic>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_166844812747419">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="IDENTITY"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Vehicle.findAll">
+            <query>Select e from Vehicle e</query>
+        </nq>
+        <nq e="false" name="Vehicle.findByMake">
+            <query>Select v from Vehicle v where v.make=:make</query>
+        </nq>
+        <nq e="false" name="Vehicle.findByModel">
+            <query>Select v from Vehicle v where v.model=:model</query>
+        </nq>
+        <nq e="false" name="Vehicle.findByYear">
+            <query>Select v from Vehicle v where v.year=:year</query>
+        </nq>
+        <nq e="false" name="Vehicle.findByVin">
+            <query>Select v from Vehicle v where v.vin=:vin</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="CarPK" abs="false" class="Car" superclassId="_166844812746518" v="true" jbn="false" xre="false" m="false" rootElement="_166844812337316" id="_166844812949221">
+        <ath>fcarella</ath>
+        <attributes>
+            <basic attribute-type="int" v="true" xvt="" name="number_of_doors" id="_166844818529230">
+                <xwm/>
+                <xm/>
+            </basic>
+        </attributes>
+        <nq e="false" name="Car.findAll">
+            <query>Select e from Car e</query>
+        </nq>
+        <nq e="false" name="Car.findByNumber_of_doors">
+            <query>Select c from Car c where c.number_of_doors=:number_of_doors</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="TruckPK" abs="false" class="Truck" superclassId="_166844812746518" v="true" jbn="false" xre="false" m="false" rootElement="_166844812337316" id="_166844813822724">
+        <ath>fcarella</ath>
+        <attributes>
+            <basic attribute-type="int" v="true" xvt="" name="number_of_axles" id="_166844820667031">
+                <xwm/>
+                <xm/>
+            </basic>
+        </attributes>
+        <nq e="false" name="Truck.findAll">
+            <query>Select e from Truck e</query>
+        </nq>
+        <nq e="false" name="Truck.findByNumber_of_axles">
+            <query>Select t from Truck t where t.number_of_axles=:number_of_axles</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="MotorcyclePK" abs="false" class="Motorcycle" pclass="Motorcycle" superclassId="_166844812746518" v="true" jbn="false" xre="false" m="false" rootElement="_166844812337316" id="_166844814217327">
+        <ath>fcarella</ath>
+        <attributes>
+            <basic attribute-type="boolean" v="true" xvt="" name="has_a_sidecar" id="_166844823820232">
+                <xwm/>
+                <xm/>
+            </basic>
+        </attributes>
+        <nq e="false" name="Motorcycle.findAll">
+            <query>Select e from Motorcycle e</query>
+        </nq>
+        <nq e="false" name="Motorcycle.findByHas_a_sidecar">
+            <query>Select m from Motorcycle m where m.has_a_sidecar=:has_a_sidecar</query>
+        </nq>
+    </entity>
+    <wsl>
+        <ws n="Main" id="_166844812337417">
+            <i ref="_166844812949221" x="38" y="246"/>
+            <i ref="_166844814217327" x="516" y="246"/>
+            <i ref="_166844813822724" x="286" y="246"/>
+            <i ref="_166844812746518" x="286" y="50"/>
+        </ws>
+    </wsl>
+</entity-mappings>
