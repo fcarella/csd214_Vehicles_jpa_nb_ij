@@ -80,7 +80,28 @@ public class AppWithControllers {
             cars        = carController.findCarEntities();
             for(Car c:cars)
                 System.out.println(c);
-            
+            // delete
+
+            Car car2 = new Car(4, "Toyaota", "Tundra", 2024, "12345");
+            carController.create(car2);
+            cars        = carController.findCarEntities();
+            for(Car c:cars)
+                System.out.println(c);
+
+            Car car3=carController.findCar(car2.getId());
+            car3.setMake("Toyota");
+            carController.edit(car3);
+            cars        = carController.findCarEntities();
+            for(Car c:cars)
+                System.out.println(c);
+
+            carController.destroy(car3.getId());
+            cars        = carController.findCarEntities();
+            for(Car c:cars)
+                System.out.println(c);
+
+
+
 
         } catch (Exception e) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, e);
